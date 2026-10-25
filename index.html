@@ -3,71 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ishwar Mokal — VMC Programmer, CAM enthusiast, learner and creator. Explore codes, PDFs, projects and digital resources.">
-  <title>Ishwar Mokal | Personal Digital Library</title>
+  <meta name="theme-color" content="#06111f">
+  <meta name="description" content="DAILY by Ishwar Mokal — simple everyday tools to organize your day, tasks, expenses, notes and shopping list.">
+  <title>DAILY — Ishwar Mokal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#home" aria-label="Ishwar Mokal home"><span class="logo">IM</span><span>Ishwar Mokal</span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-  <nav id="nav">
-    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#codes">Codes</a>
-    <a href="#pdfs">PDFs</a><a href="#projects">Projects</a><a href="#downloads">Downloads</a>
-    <a href="#store">Store</a><a href="#contact">Contact</a>
+  <a class="brand" href="#home" aria-label="DAILY home">
+    <span class="brand-mark">M</span>
+    <span><strong>Ishwar Mokal</strong><small>Personal Life Dashboard</small></span>
+  </a>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-link active" href="#home">⌂ <span>Home</span></a>
+    <a class="nav-link" href="#daily">▣ <span>My Day</span></a>
+    <a class="nav-link" href="#tools">⚒ <span>Tools</span></a>
+    <a class="nav-link" href="#learn">▤ <span>Explore</span></a>
   </nav>
-  <label class="search"><input id="searchInput" type="search" placeholder="Search files, projects..." aria-label="Search content"><span>⌕</span></label>
+  <div class="profile">
+    <button id="themeToggle" class="icon-button" title="Toggle light/dark mode" aria-label="Toggle theme">☾</button>
+    <img src="ishwar-mokal-photo.jpeg" alt="Ishwar Mokal" class="avatar">
+    <span><strong>Ishwar Mokal</strong><small>VMC Programmer</small></span>
+  </div>
 </header>
 
-<main>
-  <section class="hero" id="home">
+<main id="home" class="page">
+  <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">PERSONAL DIGITAL SPACE</p>
-      <h1>Hi, I'm<br><span>Ishwar</span> Mokal</h1>
-      <p class="roles">VMC Programmer <b>|</b> CAM Enthusiast <b>|</b> Learner <b>|</b> Creator</p>
-      <p class="intro">Welcome to my personal space where I share my codes, PDFs, projects, resources and more. Browse the library, explore my work, and download resources.</p>
-      <div class="actions"><a class="button primary" href="#downloads">↧ &nbsp; Explore My Files</a><a class="button" href="#projects">‹/› &nbsp; View Projects</a><a class="button" href="#contact">➤ &nbsp; Contact Me</a></div>
-      <p class="notice">This is your starter website. Replace sample entries with your own files and links before publishing.</p>
+      <p class="eyebrow">YOUR EVERYDAY HELPER <span>✦</span></p>
+      <h1>Let's make today <em>easier.</em></h1>
+      <p class="subtitle">A simple place to plan your day, remember the little things and keep track of everyday life.</p>
+      <div class="badges"><span>◎ Simple for everyone</span><span>★ Useful every day</span><span>🇮🇳 Made with India in mind</span></div>
     </div>
-    <div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="portrait-wrap"><img class="hero-photo" src="ishwar-mokal-photo.jpeg" alt="Ishwar Mokal at the gym"><span class="portrait-label">ISHWAR MOKAL</span></div><div class="terminal"><div class="terminal-bar"><i></i><i></i><i></i><span>workspace</span></div><pre><span>01</span>  G-code / CAM
-<span>02</span>  Toolpath planning
-<span>03</span>  Python scripts
-<span>04</span>  Digital resources
-<span>05</span>  Keep learning_</pre></div><div class="quote">LEARN<br>BUILD<br>SHARE<br><span>GROW</span></div></div>
-  </section>
-
-  <section class="category-grid">
-    <a class="category blue searchable" href="#codes" data-search="codes source scripts tools automation"><div class="icon">‹/›</div><h2>My Codes</h2><p>Scripts, snippets, tools and automation files.</p><span class="card-link">Browse Codes →</span></a>
-    <a class="category red searchable" href="#pdfs" data-search="pdf guides notes manuals documents"><div class="icon">PDF</div><h2>My PDFs</h2><p>Guides, notes, manuals and useful documents.</p><span class="card-link">Browse PDFs →</span></a>
-    <a class="category green searchable" href="#projects" data-search="projects portfolio work"><div class="icon">⬡</div><h2>My Projects</h2><p>Personal and professional projects with details.</p><span class="card-link">View Projects →</span></a>
-    <a class="category purple searchable" href="#downloads" data-search="downloads free files resources"><div class="icon">⇩</div><h2>Downloads</h2><p>Free resources for everyone to use and learn.</p><span class="card-link">Explore Downloads →</span></a>
-    <a class="category orange searchable" href="#store" data-search="store premium paid products templates"><div class="icon">🛒</div><h2>Store</h2><p>Premium files, templates and resources.</p><span class="card-link">Visit Store →</span></a>
-  </section>
-
-  <section class="section" id="downloads">
-    <div class="section-heading"><div><p class="eyebrow">THE LIBRARY</p><h2>Latest Uploads</h2></div><span class="muted">Sample entries — add your own links</span></div>
-    <div class="file-grid" id="fileGrid">
-      <article class="file-card searchable" data-search="vmc programming guide pdf machining"><div class="file-icon pdf">PDF</div><div class="file-info"><h3>VMC Programming Guide.pdf</h3><p>PDF · Sample listing</p></div><a class="download" href="#contact" title="Replace this with your file link">↧ Download</a></article>
-      <article class="file-card searchable" data-search="toolpath calculator python code"><div class="file-icon code">&lt;/&gt;</div><div class="file-info"><h3>Toolpath_Calculator.py</h3><p>Python · Sample listing</p></div><a class="download" href="#contact" title="Replace this with your file link">↧ View file</a></article>
-      <article class="file-card searchable" data-search="fixture design project cad cam"><div class="file-icon model">⬡</div><div class="file-info"><h3>Fixture Design Project</h3><p>Project · Sample listing</p></div><a class="download" href="#projects">↗ Details</a></article>
-      <article class="file-card searchable" data-search="machining parameters pdf guide"><div class="file-icon pdf">PDF</div><div class="file-info"><h3>Machining Parameters.pdf</h3><p>PDF · Sample listing</p></div><a class="download" href="#contact" title="Replace this with your file link">↧ Download</a></article>
-      <article class="file-card searchable" data-search="windows automation ahk script"><div class="file-icon code">&lt;/&gt;</div><div class="file-info"><h3>Windows_Automation.ahk</h3><p>Script · Sample listing</p></div><a class="download" href="#contact" title="Replace this with your file link">↧ View file</a></article>
-      <article class="file-card searchable" data-search="resume cv ishwar mokal pdf"><div class="file-icon pdf">PDF</div><div class="file-info"><h3>Resume_IshwarMokal.pdf</h3><p>PDF · Sample listing</p></div><a class="download" href="#contact" title="Replace this with your file link">↧ Download</a></article>
+    <div class="date-card">
+      <div class="date-icon">▣</div>
+      <div><strong id="todayName">Today</strong><p id="todayDate">Loading date…</p><small>One small step at a time.</small></div>
     </div>
-    <p class="empty-state" id="emptyState" hidden>No matching items found. Try another search.</p>
   </section>
 
-  <section class="lower-grid">
-    <article class="panel about-panel" id="about"><div class="about-photo-wrap"><img class="about-photo" src="ishwar-mokal-photo.jpeg" alt="Ishwar Mokal profile photo"></div><div class="about-content"><div class="panel-title"><span class="panel-icon">♟</span><h2>About Me</h2></div><p>I'm Ishwar Mokal, a VMC Programmer interested in CAD/CAM, automation, and digital tools. I enjoy learning, building useful resources, and sharing them with others.</p><a class="text-link" href="#contact">Get in touch →</a></div></article>
-    <article class="panel" id="projects"><div class="panel-title"><span class="panel-icon">⚙</span><h2>My Skills</h2></div><div class="tags"><span>VMC Programming</span><span>CAMWorks</span><span>Mastercam</span><span>CNC Machining</span><span>AutoCAD</span><span>SolidWorks</span><span>Python</span><span>Windows Automation</span><span>GIS Software</span><span>Technical Writing</span></div><p class="small-note">Edit these skill tags to reflect your current experience.</p></article>
-    <article class="panel" id="codes"><div class="panel-title"><span class="panel-icon">⌘</span><h2>Code & Resources</h2></div><p>Use this section to link your GitHub repositories, source code, scripts, and technical notes.</p><a class="text-link" href="https://github.com/" target="_blank" rel="noopener">Open GitHub →</a><p class="small-note">Replace the link with your own GitHub profile or repository.</p></article>
+  <section class="quick-grid" aria-label="Quick actions">
+    <a class="quick-card blue" href="#daily"><span class="tile-icon">✓</span><span class="arrow">↗</span><strong>My Tasks</strong><small>Plan your day</small></a>
+    <a class="quick-card green" href="#money"><span class="tile-icon">₹</span><span class="arrow">↗</span><strong>My Money</strong><small>Track expenses</small></a>
+    <a class="quick-card orange" href="#shopping"><span class="tile-icon">🛒</span><span class="arrow">↗</span><strong>My List</strong><small>Shopping & to-do</small></a>
+    <a class="quick-card purple" href="#notes"><span class="tile-icon">▤</span><span class="arrow">↗</span><strong>Quick Save</strong><small>Save notes and ideas</small></a>
+    <a class="quick-card pink" href="#reminders"><span class="tile-icon">◷</span><span class="arrow">↗</span><strong>Reminders</strong><small>Keep important dates</small></a>
+    <a class="quick-card teal" href="#tools"><span class="tile-icon">⌗</span><span class="arrow">↗</span><strong>Calculators</strong><small>Useful daily tools</small></a>
   </section>
 
-  <section class="store-panel" id="store"><div><p class="eyebrow">DIGITAL STORE</p><h2>Share something valuable.</h2><p>List paid PDFs, templates, code packages, or other digital products when you are ready.</p><p class="small-note">Payments are not connected in this starter version. Use a trusted payment or digital-product provider and add its checkout link here.</p></div><a class="button primary" href="#contact">Set up my store →</a></section>
+  <section id="daily" class="panel-grid">
+    <article class="panel">
+      <div class="panel-heading"><div class="heading-icon blue-bg">✓</div><h2>Today's Tasks</h2><button class="small-button" data-action="add-task">＋ Add task</button></div>
+      <form id="taskForm" class="inline-form"><input id="taskInput" maxlength="140" placeholder="What do you need to do?" aria-label="New task"><button type="submit">Add</button></form>
+      <div id="taskList" class="list"></div>
+      <p class="hint">Saved on this device automatically.</p>
+    </article>
 
-  <section class="contact-panel" id="contact"><div><p class="eyebrow">LET'S CONNECT</p><h2>Contact Me</h2><p>Have a question or collaboration idea? Add your preferred contact details here.</p></div><a class="button primary" href="mailto:your-email@example.com">✉ Email Me</a></section>
+    <article id="money" class="panel">
+      <div class="panel-heading"><div class="heading-icon green-bg">₹</div><h2>Today's Expenses</h2><button class="small-button" data-action="add-expense">＋ Add</button></div>
+      <div class="money-total"><small>Total recorded</small><strong id="expenseTotal">₹0</strong><span id="expenseCount">No entries yet</span></div>
+      <form id="expenseForm" class="inline-form"><input id="expenseName" maxlength="70" placeholder="Expense (e.g. groceries)" aria-label="Expense name"><input id="expenseAmount" type="number" min="0.01" step="0.01" placeholder="₹ Amount" aria-label="Expense amount"><button type="submit">Save</button></form>
+      <div id="expenseList" class="list compact-list"></div>
+    </article>
+
+    <article id="notes" class="panel">
+      <div class="panel-heading"><div class="heading-icon purple-bg">▤</div><h2>Quick Save</h2><button class="small-button" data-action="focus-note">＋ Save</button></div>
+      <form id="noteForm" class="note-form"><input id="noteTitle" maxlength="70" placeholder="Title (optional)" aria-label="Note title"><textarea id="noteText" maxlength="1200" rows="3" placeholder="Save a thought, number, link or anything useful…" aria-label="Note text" required></textarea><button type="submit">Save note</button></form>
+      <div id="noteList" class="list compact-list"></div>
+    </article>
+
+    <article id="reminders" class="panel">
+      <div class="panel-heading"><div class="heading-icon pink-bg">◷</div><h2>Reminders</h2><button class="small-button" data-action="add-reminder">＋ Add</button></div>
+      <form id="reminderForm" class="reminder-form"><input id="reminderTitle" maxlength="100" placeholder="What should you remember?" aria-label="Reminder title" required><input id="reminderDate" type="date" aria-label="Reminder date" required><button type="submit">Save reminder</button></form>
+      <div id="reminderList" class="list compact-list"></div>
+      <p class="hint">This version shows reminders on this device; it does not send push notifications.</p>
+    </article>
+  </section>
+
+  <section id="shopping" class="panel shopping-panel">
+    <div class="panel-heading"><div class="heading-icon orange-bg">🛒</div><h2>Shopping List</h2><span class="spacer"></span><button id="clearChecked" class="small-button">Clear checked</button></div>
+    <form id="shoppingForm" class="inline-form"><input id="shoppingInput" maxlength="120" placeholder="Add milk, vegetables, soap…" aria-label="Shopping item"><button type="submit">Add item</button></form>
+    <div id="shoppingList" class="shopping-list"></div>
+  </section>
+
+  <section id="tools" class="tools-section">
+    <div class="section-title"><div><p class="eyebrow">QUICK CALCULATIONS</p><h2>Everyday calculators</h2></div><p>Fast, simple and free to use.</p></div>
+    <div class="tool-grid">
+      <article class="tool-card"><div class="tool-symbol purple-bg">%</div><h3>Percentage</h3><p>Find a percentage of an amount.</p><label for="percentAmount">Amount (₹ or number)</label><input id="percentAmount" type="number" placeholder="e.g. 1200"><label for="percentRate">Percentage (%)</label><input id="percentRate" type="number" placeholder="e.g. 15"><button id="percentButton">Calculate</button><output id="percentResult" class="result">Your answer appears here.</output></article>
+      <article class="tool-card"><div class="tool-symbol teal-bg">⇄</div><h3>Unit Converter</h3><p>Convert common measurements.</p><label for="unitValue">Value</label><input id="unitValue" type="number" value="1"><div class="two-fields"><div><label for="unitFrom">From</label><select id="unitFrom"><option value="km">Kilometres</option><option value="m">Metres</option><option value="cm">Centimetres</option><option value="kg">Kilograms</option><option value="g">Grams</option><option value="lb">Pounds</option><option value="l">Litres</option><option value="ml">Millilitres</option></select></div><div><label for="unitTo">To</label><select id="unitTo"><option value="m">Metres</option><option value="km">Kilometres</option><option value="cm">Centimetres</option><option value="kg">Kilograms</option><option value="g">Grams</option><option value="lb">Pounds</option><option value="l">Litres</option><option value="ml">Millilitres</option></select></div></div><button id="unitButton">Convert</button><output id="unitResult" class="result">1 km = 1000 m</output></article>
+      <article class="tool-card"><div class="tool-symbol green-bg">₹</div><h3>Discount Finder</h3><p>Check the price after a discount.</p><label for="priceInput">Original price (₹)</label><input id="priceInput" type="number" min="0" placeholder="e.g. 2000"><label for="discountInput">Discount (%)</label><input id="discountInput" type="number" min="0" max="100" placeholder="e.g. 20"><button id="discountButton">Find price</button><output id="discountResult" class="result">Your final price appears here.</output></article>
+      <article class="tool-card"><div class="tool-symbol orange-bg">⛽</div><h3>Trip Fuel Cost</h3><p>Estimate fuel expense for a trip.</p><label for="tripDistance">Distance (km)</label><input id="tripDistance" type="number" min="0" placeholder="e.g. 120"><label for="vehicleMileage">Mileage (km/litre)</label><input id="vehicleMileage" type="number" min="0.1" placeholder="e.g. 45"><label for="fuelPrice">Fuel price (₹/litre)</label><input id="fuelPrice" type="number" min="0" placeholder="e.g. 105"><button id="fuelButton">Estimate cost</button><output id="fuelResult" class="result">Your trip estimate appears here.</output></article>
+    </div>
+  </section>
+
+  <section id="learn" class="learn-banner">
+    <div><p class="eyebrow">MADE TO GROW WITH YOU</p><h2>One small step every day.</h2><p>Keep your everyday essentials together in one simple place.</p></div>
+    <button id="exportButton" class="primary-button">↓ Export my data</button>
+  </section>
+  <footer><p>“Small steps every day make a big difference.”</p><span>DAILY · Created by Ishwar Mokal</span><small>Your entries stay in this browser unless you export them. Avoid saving passwords or highly sensitive information.</small></footer>
 </main>
-<footer><a class="brand" href="#home"><span class="logo">IM</span><span>Ishwar Mokal</span></a><p>Built to learn, build, share and grow.</p><span>© <span id="year"></span> Ishwar Mokal</span></footer>
+<div id="toast" role="status" aria-live="polite" class="toast"></div>
 <script src="script.js"></script>
 </body>
 </html>
