@@ -16,4 +16,26 @@ const f={km:1000,m:1,cm:.01,kg:1,g:.001,lb:.45359237,l:1,ml:.001},lab={km:"km",m
 $("discountButton").onclick=()=>{const p=$("priceInput").value,d=$("discountInput").value;if(p===""||d===""||Number(p)<0||Number(d)<0||Number(d)>100){$("discountResult").textContent="Enter a valid price and discount (0–100%).";return}const save=Number(p)*Number(d)/100;$("discountResult").textContent=`Pay ${money(Number(p)-save)} · Save ${money(save)}`};
 $("fuelButton").onclick=()=>{const d=Number($("tripDistance").value),m=Number($("vehicleMileage").value),p=Number($("fuelPrice").value);if($("tripDistance").value===""||$("vehicleMileage").value===""||$("fuelPrice").value===""||d<0||m<=0||p<0){$("fuelResult").textContent="Enter valid distance, mileage and fuel price.";return}const l=d/m;$("fuelResult").textContent=`Approx. ${l.toFixed(2)} L · Estimated cost ${money(l*p)}`};
 $("exportButton").onclick=()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),...data},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="daily-my-data.json";a.click();URL.revokeObjectURL(url);toast("Data export started.")};
+
+let deferredInstallPrompt=null;
+const installButton=document.getElementById("installApp");
+window.addEventListener("beforeinstallprompt",event=>{
+  event.preventDefault();
+  deferredInstallPrompt=event;
+  if(installButton) installButton.hidden=false;
+});
+if(installButton){
+  installButton.addEventListener("click",async()=>{
+    if(!deferredInstallPrompt){toast("If install is unavailable, use your browser menu and choose Install app or Add to Home screen.");return}
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    installButton.hidden=true;
+  });
+}
+window.addEventListener("appinstalled",()=>{
+  if(installButton) installButton.hidden=true;
+  toast("DAILY was installed.");
+});
+
 function renderAll(){renderTasks();renderExpenses();renderNotes();renderReminders();renderShopping()}renderAll()})();

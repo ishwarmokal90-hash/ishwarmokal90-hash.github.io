@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06111f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="description" content="Ishwar Mokal's personal website: everyday tools, CNC and Mastercam projects, learning resources and selected downloads.">
 <title>Ishwar Mokal | DAILY & CNC Digital Library</title>
 <link rel="stylesheet" href="style.css">
@@ -13,7 +15,7 @@
   <nav class="nav" aria-label="Main navigation">
     <a href="#home">⌂ <span>Home</span></a><a href="#daily">▣ <span>DAILY</span></a><a href="#cnc">⚙ <span>CNC</span></a><a href="#library">▤ <span>Library</span></a><a href="#downloads">↓ <span>Downloads</span></a><a href="#contact">✉ <span>Contact</span></a>
   </nav>
-  <div class="profile"><button id="themeToggle" class="icon-button" aria-label="Toggle theme" title="Toggle theme">☾</button><img src="ishwar-mokal-photo.jpeg" alt="Ishwar Mokal" class="avatar"><span><strong>Ishwar Mokal</strong><small>VMC Programmer</small></span></div>
+  <div class="profile"><button id="themeToggle" class="icon-button" aria-label="Toggle theme" title="Toggle theme">☾</button><button id="installApp" class="install-button" hidden>＋ Install</button><img src="ishwar-mokal-photo.jpeg" alt="Ishwar Mokal" class="avatar"><span><strong>Ishwar Mokal</strong><small>VMC Programmer</small></span></div>
 </header>
 <main class="page" id="home">
 <section class="hero">
@@ -70,4 +72,5 @@
 <footer><p>“Small steps every day make a big difference.”</p><span>DAILY · Ishwar Mokal · VMC Programmer</span><small>Daily entries are saved in this browser only. Avoid storing passwords or highly sensitive information.</small></footer>
 </main>
 <div id="toast" role="status" aria-live="polite" class="toast"></div><script src="script.js"></script>
+<script>if ("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));</script>
 </body></html>
